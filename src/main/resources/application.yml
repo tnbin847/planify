@@ -1,28 +1,53 @@
+#
+# 스프링 프로파일 그룹핑 설정
+#
+spring:
+  profiles:
+    group:
+      dev: common, dev
 
 
+---
+# 스프링 공통 환경 설정
+spring:
+  config:
+    activate:
+      # 'common'라는 환경 설정을 활성화시킬 때 적용
+      on-profile:
+        - common
+  main:
+    banner-mode: off  # 서버 런타임시, 콘솔 상에 출력되는 배너 끄기
+  # 타임리프 설정 : 웹 브라우저의 새로고침 시, 변경된 내용을 적용
+  thymeleaf:
+    prefix: file:src/main/resources/templates/
+    suffix: .html
+    cache: false
+  # 웹 정적 리소스 설정 : 웹 브라우저의 새로고침 시, 변경된 내용을 적용
+  web:
+    resources:
+      static-locations:
+        - file:src/main/resources/static/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 마이바티스 설정
+mybatis:
+  # 마이바티스의 동작 방식에 대한 설정 값
+  configuration:
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    jdbc-type-for-null: NULL
+    local-cache-scope: STATEMENT
+  # 매핑 처리시 사용될 자바 클래스를 작성할 때 해당 클래스가 속해 있는 패키지 경로 생략
+  type-aliases-package: com.bini.planify.domain.**.dto
+  # 자체 구현한 타입 핸들러 클래스 등록
+  type-handlers-package: com.bini.planify.global.common.mybatis
+  
+# 내장 톰캣 서버 설정
+server:
+  port: 9206  # 톰캣 서버의 포트 번호 변경
+  servlet:
+    # HTTP 요청 및 응답의 인코딩 설정 : 한글화 처리
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
