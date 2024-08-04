@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLANIFY</title>
+    <th:block th:replace="common/layout/fragments/head :: headLib"/>
+    <link rel="stylesheet" href="/css/planify/index.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="container" class="is-vertical align-center">
+            <main class="contents">
+                <form role="form" id="signupForm" class="form">
+                    <div class="field is-grouped">
+                        <div class="field">
+                            <label for="uName" class="label">이름</label>
+                            <span class="input">
+                                <input type="text" name="name" id="uName" class="box">
+                            </span>
+                        </div>
+                        <div class="field">
+                            <label for="uId" class="label">아이디</label>
+                            <p class="help-block">영문과 숫자를 모두 포함한 4~20자</p>
+                            <div class="has-addons">
+                                <span class="input">
+                                    <input type="text" name="loginId" id="uId" class="box" autofocus>
+                                </span>
+                                <span class="button is-primary">
+                                    <button type="button" id="verifyIdBtn" class="box">중복확인</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="uEmail" class="label">이메일</label>
+                            <div class="has-addons">
+                                <span class="input">
+                                    <input type="text" name="email" id="uEmail" class="box" autofocus>
+                                </span>
+                                <span class="button is-primary">
+                                    <button type="button" id="verifyEmailBtn" class="box">중복확인</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="uPwd" class="label">비밀번호</label>
+                            <p class="help-block">영문과 숫자, 특수문자를 모두 포함한 8~16자</p>
+                            <span class="input">
+                                <input type="password" name="password" id="uPwd" class="box" autocomplete="off">
+                            </span>
+                        </div>
+                        <div class="field">
+                            <label for="uPwdConfirm" class="label">비밀번호 확인</label>
+                            <span class="input">
+                                <input type="password" name="passwordConfirm" id="uPwdConfirm" class="box" autocomplete="off">
+                            </span>
+                        </div>
+                        <div class="field">
+                            <span class="button is-primary">
+                                <button type="button" id="signupBtn" class="box">가입하기</button>
+                            </span>
+                        </div>
+                        <div class="field">
+                            <span class="box has-text-link">
+                                이미 계정을 가지고 있으시다면? <a href="/" role="link" class="text-link text-primary">로그인</a>
+                            </span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="field is-grouped">
+                        <div class="field">
+                            <span class="button is-kakao">
+                                <button type="button" id="kakaoBtn" class="box">카카오 계정으로 가입하기</button>
+                            </span>
+                        </div>
+                        <div class="field">
+                            <span class="button is-google">
+                                <button type="button" id="googleBtn" class="box">구글 계정으로 가입하기</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

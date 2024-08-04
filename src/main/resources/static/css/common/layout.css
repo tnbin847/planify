@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+/*************************************************************************************************************************
+ * layout.css
+ *  : 웹 페이지의 공통 레이아웃에 대한 스타일 정의
+ *
+ *  @author     Park Su Bin
+ *  @version    1.0.0
+ *************************************************************************************************************************/
+/** 
+ *  THE ENTIRE PAGE OF WEB PAGE
+ */
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/** 
+ *  CONTENT CONTAINER : SIDE MENU + MAIN CONTENT
+ */
+#container {
+    flex: 1;
+}
+
+/* MAIN CONTENT */
+.contents {
+    padding: var(--spacing-sm);
+    width: 70%;
+}
