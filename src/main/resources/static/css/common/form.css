@@ -70,6 +70,10 @@
         height: var(--inner-element-height);
         font-size: var(--text-base);
     }
+
+    &:focus-within {
+        border-color: var(--color-primary);
+    }
 }
 
 /* INPUT HELP TEXT */

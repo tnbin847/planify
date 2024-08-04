@@ -12,7 +12,7 @@ flush privileges;
 
 
 -- 테이블 생성
-create table user_account (
+create table user (
 	id						bigint				unique not null auto_increment comment '사용자계정번호',
 	login_id				varchar(20)			not null comment '계정 로그인 아이디',
 	password				varchar(255)		not null comment '계정 비밀번호',
@@ -32,5 +32,5 @@ create table user_authority (
 	used_at					char(1)				not null comment '권한사용여부',
 	created_at				datetime			not null comment '등록일자',
 	updated_at				datetime			not null comment '변경일자',
-	foreign key (user_id) references user_account (id) on update cascade on delete cascade
+	foreign key (user_id) references user (id) on update cascade on delete cascade
 ) engine = innodb default charset = utf8mb4 comment '사용자 계정별 권한 정보';
